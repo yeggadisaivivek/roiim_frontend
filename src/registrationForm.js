@@ -34,7 +34,7 @@ class RegistrationForm extends Component {
         e.preventDefault();
         //if(this.formValidate()){
             console.log("entered");
-            axios.post("http://localhost:8085/create-customer", {
+            axios.post("https://roiimbackend.herokuapp.com/create-customer", {
                 merchantRefNum: this.state.username,
                 name: this.state.name
             })
@@ -97,7 +97,7 @@ class RegistrationForm extends Component {
 					result["currency"] = "USD";
 					result["custId"] = id;					
 					
-						axios.post("http://localhost:8085/payment", {
+						axios.post("https://roiimbackend.herokuapp.com/payment", {
 							merchantRefNum:token,
 							custId:id,
 							paymentHandleToken:result.paymentHandleToken,
